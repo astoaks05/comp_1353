@@ -27,11 +27,6 @@ class DoublyLinkedList:
     def __init__(self):
         """
         Create an empty doubly linked list.
-
-        TODO:
-        - Set head to None.
-        - Set tail to None.
-        - Set size to 0.
         """
         self.header = Node(None, None, None)
         self.trailer = Node(None, None, None)
@@ -62,13 +57,7 @@ class DoublyLinkedList:
 
     def __str__(self):
         """
-        LAB TASK:
-        Implement __str__ for the DoublyLinkedList class.
-
         Return a string showing all values in the list from first to last.
-
-        Example format:
-            [2, 4, 6]
 
         Returns:
             str: A string representation of the list contents.
@@ -119,9 +108,6 @@ class DoublyLinkedList:
 
     def remove_first(self):
         """
-        LAB TASK:
-        Implement remove_first for the DoublyLinkedList class.
-
         Remove the first node from the list and return its val.
 
         Returns:

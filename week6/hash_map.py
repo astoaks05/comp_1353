@@ -76,19 +76,21 @@ class HashMap:
         self.size += 1
         
         #Check if we need to expand the table here
-        load_factor = self.size / len(self.the_table))
+        load_factor = self.size / len(self.the_table)
         if load_factor > 0.75:
             self._expand_table()
         
         return None
 
     def remove(self, k):
+        # check this
         index = self._hash_and_compress(k)
         bucket = self.the_table[index]
         for i in range(len(bucket)):
             item = bucket[i]
             if item.key == k:
-                return bucket.remove_at_index()
+                return bucket.remove_at_index(i)
+        return None
 
     #iterable methods
     def keys(self):
@@ -107,7 +109,7 @@ class HashMap:
         return [item.value for bucket in self.the_table for item in bucket]
 
     def items(self):
-        return [item for bucket in self.the_table for item in bucket]
+        return (item for bucket in self.the_table for item in bucket)
 
     #size methods
     def get_size(self):
@@ -134,14 +136,6 @@ class HashMap:
         print("Size of largest bucket: ", max_bucket_size)
         print("Table size: ", self.size)
         print("Load factor: ", self.size / len(self.the_table))
-
-
-
-def main():
-    map = HashMap()
-
-if __name__=="__main__":
-    main()
 
 
 

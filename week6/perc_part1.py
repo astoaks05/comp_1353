@@ -120,7 +120,7 @@ class Forest:
         # check for current cell reaching the bottom
         while len(cells_to_explore) != 0:
             cur_cell = cells_to_explore.pop()
-            self.draw()
+            # self.draw()
             # if the current cell is in the last row, return true
             if cur_cell.row == self.height-1:
                 return True
@@ -167,7 +167,7 @@ class Forest:
 
         while len(cells_to_explore) != 0:
             cur_cell = cells_to_explore.dequeue()
-            self.draw()
+            # self.draw()
             if cur_cell.row == self.height - 1:
                 return True
             
@@ -186,22 +186,22 @@ class Forest:
                         cells_to_explore.enqueue(Cell(r, c))
         return False
 
-def main():
-    """
-    Creates two Forests, completes a dfs on the first, and a bfs on the second
+# def main():
+#     """
+#     Creates two Forests, completes a dfs on the first, and a bfs on the second
     
-    Args: 
-        None
+#     Args: 
+#         None
 
-    Returns: 
-        None
-    """
-    forest1 = Forest(15, 15, 0.75)
-    print(forest1.dfs())
+#     Returns: 
+#         None
+#     """
+#     forest1 = Forest(15, 15, 0.75)
+#     print(forest1.dfs())
 
-    forest2 = Forest(15, 15, 0.75)
-    print(forest2.bfs())
+#     forest2 = Forest(15, 15, 0.75)
+#     print(forest2.bfs())
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
 
